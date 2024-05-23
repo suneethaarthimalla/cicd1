@@ -29,7 +29,24 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
-			</plugin>
+				<configuration>
+					<cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<muleVersion>4.4.0</muleVersion>
+						<username>suneethaarthimalla</username>
+						<password>JSnarayana_77</password>
+						<applicationName>cicd1</applicationName>
+						<environment>Sandbox</environment>
+						<region>us-east-2</region>
+						<workers>1</workers>
+						<workerType>MICRO</workerType>
+						<properties>
+							<key>value</key>
+						</properties>
+					</cloudHubDeployment>
+					<classifier>mule-application</classifier>
+				</configuration>
+				</plugin>
 		</plugins>
 	</build>
 
