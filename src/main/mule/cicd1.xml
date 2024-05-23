@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="e00012b7-3d10-4825-9643-359b6a660067" >
+		<http:listener-connection host="localhost" port="8081" readTimeout="300000000" />
+	</http:listener-config>
+	<flow name="cicd1Flow" doc:id="4506eecf-f038-48ae-83d1-60805e995d02" >
+		<http:listener doc:name="Listener" doc:id="5eb6f676-e737-4e0c-8830-2d3c3b81ca8a" config-ref="HTTP_Listener_config" path="/cicd1"/>
+		<set-payload value='#["Working on cicd pipe line"]' doc:name="Set Payload" doc:id="69373091-622d-4ecd-a95e-3c81edc7b56d" />
+	</flow>
+</mule>
